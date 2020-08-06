@@ -27,10 +27,6 @@ const alumnos = [
 	}
 ];
 
-// /acamica/dwfs/alumnos/abc - retorna error
-// /acamica/comision/alumnos   comisio=dwfs,dwa,bigdata ?nombre(usuario)
-// /acamica/comision/alumnos/1 SiNO:404
-
 // /acamica/dwfs/alumnos
 app.get("/acamica/dwsf/alumnos", (req, res, next)=>{
     res.status(200).json({
