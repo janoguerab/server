@@ -40,6 +40,7 @@ app.get("/acamica/dwsf/alumnos/:id",(req, res, next) => {
 	if(parseInt(req.params.id)){
 		res.status(200).json({
 			alumnno: alumnos.find((alumno) => alumno.id === req.params.id),
+			message: "Todo OK"
 		});	
 	}else{
 		res.status(400).json({
@@ -60,11 +61,13 @@ app.get("/acamica/:comision/alumnos",(req, res, next) => {
 	})
 	if(nombre){
 		res.status(200).json({
-			alumnno: responseAlumnos.find((alumno) => alumno.nombre ===nombre)
+			alumnno: responseAlumnos.find((alumno) => alumno.nombre ===nombre),
+			message: "Todo OK"
 		});	
 	}else{
 		res.status(200).json({
-			alumno: responseAlumnos
+			alumnos: responseAlumnos,
+			message: "Todo OK"
 		});	
 	}
 });
@@ -81,7 +84,8 @@ app.get("/acamica/:comision/alumnos/:id",(req, res, next) => {
 	let alumno = responseAlumnos.find((alumno) => alumno.id === id)
 	if(alumno){
 		res.status(200).json({
-			alumno: alumno
+			alumno: alumno,
+			message: "Todo OK"
 		});	
 	}else{
 		// Si el alumno no pertenece a la comision
